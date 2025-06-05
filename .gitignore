@@ -32,3 +32,4 @@ MANIFEST
 
 .pytest_cache/
 poetry.lock
+mydesktop.spec
