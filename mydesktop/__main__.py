@@ -1,5 +1,8 @@
 from datetime import datetime
 
+from textual.app import App, ComposeResult
+from textual.widgets import Static
+
 
 class Developer:
     valid_languages: list[str] = [
@@ -46,11 +49,16 @@ def date() -> datetime:
     return current_datetime
 
 
+class TextureApp(App):
+    """Minimal TUI application with a default screen."""
+
+    def compose(self) -> ComposeResult:
+        yield Static("Hello from Texture!")
+
+
 def main() -> None:
-    start_coding()
-    print(date())
-    dev = Developer("Alice", "Python")
-    print(dev.get_info())
+    TextureApp().run()
 
 
-main()
+if __name__ == "__main__":
+    main()
