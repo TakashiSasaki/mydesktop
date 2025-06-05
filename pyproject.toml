@@ -1,5 +1,5 @@
 [project]
-name = "Package Template"
+name = "mydesktop"
 version = "1.0.0"
 description = "A Python package template."
 readme = "README.md"
@@ -12,10 +12,16 @@ pyinstaller = ["pyinstaller"]
 
 [project.scripts]
 build-exe = "mydesktop.build:main"
+mydesktop = "mydesktop.__main__:main"
+test = "pytest:main"
 
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
 
 
 
