@@ -3,11 +3,15 @@ name = "mydesktop"
 version = "1.0.0"
 description = "A Python package template."
 readme = "README.md"
-
-requires-python = ">=3.8"
+requires-python = ">=3.8.1,<4.0.0"
 
 [project.optional-dependencies]
-dev-requirements = {file = "dev-requirements.txt"}
+dev = [
+  "pytest",
+  "setuptools",
+  "wheel",
+  "textual",
+]
 pyinstaller = ["pyinstaller"]
 
 [project.scripts]
@@ -16,16 +20,9 @@ mydesktop = "mydesktop.__main__:main"
 test = "pytest:main"
 
 [build-system]
-requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+requires = ["setuptools", "wheel"]
 
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]
-
-
-
-
-
-
-
