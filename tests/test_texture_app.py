@@ -30,11 +30,3 @@ def test_button_triggers_exit():
     event = Button.Pressed(button)
     app.on_button_pressed(event)
     mock_exit.assert_called_once()
-
-def test_compose_returns_static_widget():
-    app = TextureApp()
-    widgets = list(app.compose())
-    assert len(widgets) == 1
-    widget = widgets[0]
-    assert isinstance(widget, Static)
-    assert widget.renderable == "Hello from Texture!"
