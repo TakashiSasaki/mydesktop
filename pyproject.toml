@@ -5,15 +5,21 @@ description = "A Python package template."
 readme = "README.md"
 requires-python = ">=3.8.1,<4.0.0"
 
-[project.dependencies]
-textual = "*"
+# PEP 621 に準拠し、dependencies は配列形式で記述します
+dependencies = [
+  "textual",
+]
 
 [project.optional-dependencies]
+# PyInstaller 本体は optional-dependencies として定義
 pyinstaller = ["pyinstaller"]
 
 [project.scripts]
+# build-exe を実行すると mydesktop.build:main() が呼び出される
 build-exe = "mydesktop.build:main"
+# `poetry run mydesktop` で __main__.py の main() を呼び出せる
 mydesktop = "mydesktop.__main__:main"
+# `poetry run test` で pytest:main() を呼び出せる
 test = "pytest:main"
 
 [build-system]
@@ -24,6 +30,7 @@ requires = ["setuptools", "wheel"]
 addopts = "-q"
 testpaths = ["tests"]
 
+# 開発時依存 (dev group) として pytest などを定義
 [tool.poetry.group.dev.dependencies]
 pytest = "*"
 setuptools = "*"
