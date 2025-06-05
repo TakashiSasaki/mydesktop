@@ -38,13 +38,21 @@ To create a standalone executable for Windows using PyInstaller:
    pip install .[pyinstaller]
    ```
 
-2. Build the executable from your package (replace `my_package` with your actual package name):
+2. Build the executable using Poetry:
+
+   ```
+   poetry run build-exe
+   ```
+
+   This runs PyInstaller with the required options and places the binary in the `dist` directory.
+
+3. (Optional) Invoke PyInstaller directly (replace `my_package` with your package name):
 
    ```
    pyinstaller --onefile -m my_package
    ```
 
-   The generated executable will be located in the `dist` directory.
+   The generated executable will also be located in the `dist` directory.
 
 For more advanced options, refer to the [PyInstaller documentation](https://pyinstaller.org/).
 

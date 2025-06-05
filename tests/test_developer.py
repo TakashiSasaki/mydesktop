@@ -1,5 +1,5 @@
 import pytest
-from my_package.__main__ import Developer
+from mydesktop.__main__ import Developer
 
 
 def test_get_info():
