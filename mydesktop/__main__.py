@@ -3,7 +3,6 @@ from datetime import datetime
 from textual.app import App, ComposeResult
 from textual.widgets import Static, Button, Footer
 
-
 class Developer:
     valid_languages: list[str] = [
         "Python",
@@ -68,7 +67,6 @@ class TextureApp(App):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "quit-button":
             self.exit()
-
 
 def main() -> None:
     TextureApp().run()
