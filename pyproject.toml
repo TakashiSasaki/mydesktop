@@ -1,25 +1,23 @@
 [project]
-name = "Package Template"
-version = "1.0.0"
 description = "A Python package template."
+name = "mydesktop"
 readme = "README.md"
+version = "0.0.1"
 
-requires-python = ">=3.8"
+requires-python = ">=3.8.1,<4.0.0"
 
 [project.optional-dependencies]
-dev-requirements = {file = "dev-requirements.txt"}
+dev-requirements = [
+  "pytest",
+  "setuptools",
+  "wheel",
+  "textual",
+]
 pyinstaller = ["pyinstaller"]
 
 [project.scripts]
 build-exe = "mydesktop.build:main"
 
 [build-system]
-requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
-
-
-
-
-
-
-
+requires = ["setuptools", "wheel"]
