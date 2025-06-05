@@ -27,3 +27,24 @@ In addition to these extension there a few settings that are also useful to enab
 - Run the app using the Run and Debug view
 - To test, navigate to the Test Panel to configure your Python test or by triggering the **Python: Configure Tests** command from the Command Palette
 - Run tests in the Test Panel or by clicking the Play Button next to the individual tests in the `test_date_time.py` and `test_developer.py` file
+
+## Building a Standalone Executable with PyInstaller
+
+To create a standalone executable for Windows using PyInstaller:
+
+1. Install the development dependencies (including PyInstaller):
+
+   ```
+   pip install .[pyinstaller]
+   ```
+
+2. Build the executable from your package (replace `my_package` with your actual package name):
+
+   ```
+   pyinstaller --onefile -m my_package
+   ```
+
+   The generated executable will be located in the `dist` directory.
+
+For more advanced options, refer to the [PyInstaller documentation](https://pyinstaller.org/).
+
